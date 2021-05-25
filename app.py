@@ -5,11 +5,10 @@ import csv
 
 app = Flask(__name__)
 
-model = load_model('models\Modelc2.h5')
+model = load_model(
+    '/models/Modelc2.h5')
 
 model.make_predict_function()
-
-dic = {}
 
 
 def data_read(x):
