@@ -5,7 +5,7 @@ import csv
 
 app = Flask(__name__)
 
-model = load_model('models\Modelnc3.h5')
+model = load_model('models\Modelnc2.h5')
 
 model.make_predict_function()
 
@@ -44,8 +44,6 @@ def get_output():
 
         img_path = "uploads/" + img.filename
         img.save(img_path)
-        x = "static/uploads/" + img.filename
-        img.save(x)
         p = predict_label(img_path)
 
     return render_template("index.html", prediction=p, img_path=img_path)
